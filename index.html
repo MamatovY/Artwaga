@@ -117,22 +117,28 @@
         <h1>Пользователи</h1>
         <div class="controls">
             <label for="sort">Сортировать по:</label>
-            <select id="sort" onchange="sortUsers()">
+            <select id="sort">
                 <option value="name">Имени</option>
                 <option value="email">email</option>
             </select>
         </div>
         <div class="controls">
             <label for="filter">Фильтровать по:</label>
-            <input type="text" id="filter" oninput="filterUsers()" placeholder="Введите имя или email">
+            <input type="text" id="filter" placeholder="Введите имя или email">
         </div>
-        <button onclick="fetchUsers()">Обновить</button>
+        <button id="refresh-btn">Обновить</button>
 
         <ul id="user-list">
             <!-- Карточки пользователей -->
         </ul>
     </div>
     <script>
+        document.getElementById('refresh-btn').addEventListener('click', fetchUsers);
+        document.getElementById('sort').addEventListener('change', sortUsers);
+        document.getElementById('filter').addEventListener('input', filterUsers);
+
+
+
         let usersData = []; // массив для хранения данных о пользователях
 
         function fetchUsers() {
