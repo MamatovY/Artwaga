@@ -1,0 +1,103 @@
+/* Фильтр и сортировка */
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.controls label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.controls select,
+.controls input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.controls select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.controls input[type="text"] {
+    background-color: #f8f8f8;
+}
+
+
+/* Кнопки */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Карточки */
+#user-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.user-card {
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.user-card__name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.user-card__email,
+.user-card__phone {
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+}
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
